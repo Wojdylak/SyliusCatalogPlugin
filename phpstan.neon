@@ -5,34 +5,35 @@ parameters:
         - src
 
     reportUnmatchedIgnoredErrors: false
-    treatPhpDocTypesAsCertain: false
 
     excludePaths:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
 
         # Test dependencies
-        - 'tests/Application/app/**.php'
-        - 'tests/Application/src/**.php'
+        - 'tests/TestApplication/src/**.php'
 
     ignoreErrors:
         - identifier: missingType.iterableValue
         - identifier: missingType.generics
         - '/Parameter #1 \$configuration of method Symfony\\Component\\DependencyInjection\\Extension\\Extension::processConfiguration\(\) expects Symfony\\Component\\Config\\Definition\\ConfigurationInterface, Symfony\\Component\\Config\\Definition\\ConfigurationInterface\|null given\./'
+        - '/.* on an unknown class Elastica\\Query.*/'
+        - '/.* on an unknown class BitBag\\SyliusElasticsearchPlugin.*/'
+        - '/.* should return Elastica\\Query\\AbstractQuery but returns .*/'
         -
             message: '/Property [a-zA-Z\\]+::\$[a-zA-Z]+ has unknown class FOS\\ElasticaBundle\\[a-zA-Z\\]+ as its type./'
             paths:
                 - *
         -
-            message: '/Call to method [a-zA-Z()]+ on an unknown class FOS\\ElasticaBundle\\[a-zA-Z\\]+\./'
+            message: '/Call to method [a-zA-Z\\(\\)]+ on an unknown class FOS\\ElasticaBundle\\[a-zA-Z\\]+\./'
             paths:
                 - *
         -
-            message: '/Instantiated class Elastica\\[a-zA-Z()\\]+ not found./'
+            message: '/Instantiated class Elastica\\[a-zA-Z\\(\\)\\]+ not found./'
             paths:
                 - *
         -
-            message: '/Call to method [a-zA-Z\(\)]+\(\) on an unknown class Elastica\\[a-zA-Z()\\]+./'
+            message: '/Call to method [a-zA-Z\\(\\)]+\\(\\) on an unknown class Elastica\\[a-zA-Z\\(\\)\\]+./'
             paths:
                 - *
         -
@@ -56,7 +57,7 @@ parameters:
             paths:
                 - *
         -
-            message: '/Call to method [a-zA-Z\(\)]+\(\) on an unknown class BitBag\\SyliusElasticsearchPlugin\\[a-zA-Z()\\]+./'
+            message: '/Call to method [a-zA-Z\\(\\)]+\\(\\) on an unknown class BitBag\\SyliusElasticsearchPlugin\\[a-zA-Z\\(\\)\\]+./'
             paths:
                 - *
 

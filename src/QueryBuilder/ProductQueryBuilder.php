@@ -99,7 +99,7 @@ final class ProductQueryBuilder implements ProductQueryBuilderInterface
     {
         $queries = [];
         foreach ($rules as $rule) {
-            $type = $rule->getType();
+            $type = (string) $rule->getType();
 
             /** @var RuleInterface $ruleChecker */
             $ruleChecker = $this->serviceRegistry->get($type);

@@ -42,7 +42,6 @@ final class AttributeRule implements RuleInterface
 
     public function createSubquery(array $configuration): AbstractQuery
     {
-        /** @var AttributeInterface $attribute */
         $attribute = $configuration['attribute'];
 
         if (!$attribute instanceof AttributeInterface) {
@@ -55,7 +54,7 @@ final class AttributeRule implements RuleInterface
             $this->localeContext->getLocaleCode(),
         );
 
-        if (in_array($attribute->getStorageType(), [DateAttributeType::TYPE, DatetimeAttributeType::TYPE])) {
+        if (in_array($attribute->getStorageType(), [DateAttributeType::TYPE, DatetimeAttributeType::TYPE], true)) {
             $value = $this->getDateAttributeValue($configuration);
         } else {
             $value = $this->stringFormatter->formatToLowercaseWithoutSpaces($configuration['value']);

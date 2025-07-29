@@ -14,7 +14,7 @@ namespace BitBag\SyliusCatalogPlugin\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\TranslatableTrait;
-use Sylius\Component\Resource\Model\TranslationInterface;
+use Sylius\Resource\Model\TranslationInterface;
 
 class Catalog implements CatalogInterface
 {

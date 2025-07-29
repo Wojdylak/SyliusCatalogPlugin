@@ -1,5 +1,0 @@
-framework:
-    test: ~
-    session:
-        handler_id: ~
-    profiler: { only_exceptions: false }

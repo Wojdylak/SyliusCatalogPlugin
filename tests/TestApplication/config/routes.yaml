@@ -1,0 +1,2 @@
+bitbag_sylius_catalog_plugin:
+    resource: "@BitBagSyliusCatalogPlugin/Resources/config/routing.yaml"
