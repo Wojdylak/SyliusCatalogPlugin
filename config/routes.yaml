@@ -1,7 +1,0 @@
-app_admin_catalog:
-  resource: |
-    alias: app.catalog
-    section: admin
-    path: admin
-    grid: app_admin_catalog
-  type: sylius.resource
