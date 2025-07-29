@@ -128,7 +128,7 @@ jobs:
                 name: Prepare test application database
                 run: |
                     vendor/bin/console doctrine:database:create -vvv
-                    vendor/bin/console doctrine:migrations:migrate --no-interaction -vvv
+                    vendor/bin/console doctrine:schema:create --no-interaction -vvv
 
             -
                 name: Prepare test application assets
